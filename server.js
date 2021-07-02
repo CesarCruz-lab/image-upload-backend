@@ -5,6 +5,6 @@ const app = require('./src/app');
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 8085;
 
-app.listen(PORT, () => {
+app.listen(PORT, HOST, () => {
 	console.log(`Server running at http://${HOST}:${PORT}`);
 });
