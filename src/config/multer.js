@@ -22,7 +22,7 @@ const getHash = (len=16, min=0, max=16) => {
 	return hash;
 }
 
-const defaultPath = path.resolve(__dirname, '..', '..', 'tmp', 'uploads');
+const defaultPath = path.resolve(__dirname, '../../tmp/uploads');
 
 
 // STORAGES
@@ -44,12 +44,11 @@ const cloudinaryStorageConfig = new CloudinaryStorage({
 		folder: 'files',
 		format: async (req, file) => file.mimetype.replace('image/', ''),
 		public_id: (req, file) => {
-			const originalname = file.originalname.replace(/[\.][\w]+$/g, '');
 			const hash = `${new Date().toISOString()}_${getHash(8)}`;
 			
-			file.key = `${hash}_${originalname}`;
+			file.key = `${hash}_${file.originalname}`;
 			
-			return file.key;
+			return file.key.replace(/[\.][\w]+$/g, '');
 		}
 	}
 });

@@ -23,9 +23,7 @@ sequelize.sync()
 
 app.use('/', routes);
 
-app.use('/images/key/',
-	express.static(path.resolve(__dirname, '..', 'tmp', 'uploads'))
-);
+app.use('/images/search', express.static('tmp/uploads'));
 
 
 module.exports = app;
