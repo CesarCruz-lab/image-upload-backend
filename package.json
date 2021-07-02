@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "Cesar Cruz",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
   "dependencies": {
     "cloudinary": "^1.26.1",
     "cors": "^2.8.5",
