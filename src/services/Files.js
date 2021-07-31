@@ -12,7 +12,7 @@ async function find(search) {
 	try {
 		response.result = await FileModel.findAll(search);
 		response.message = 'OK';
-		
+		console.log(response.result);
 	} catch (err) {
 		response.message = err.message;
 	}

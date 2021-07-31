@@ -9,6 +9,7 @@ const model = {
 	},
 	name: db.STRING,
 	key: db.STRING,
+	size: db.STRING,
 	mimetype: db.STRING,
 	url: db.TEXT
 };
